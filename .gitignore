@@ -1,0 +1,11 @@
+.gitignore
+.idea/
+Organizer.jar
+backup/
+data.txt.bak
+organizer.iml
+raw.txt
+data.txt
+icon.png
+target/
+src/main/kotlin/META-INF
