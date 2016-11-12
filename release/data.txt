@@ -1,0 +1,4 @@
+Class	No.	Name	Group	Check In	Check Out
+2Y	3	Cheung Tai Chiu	G	Not yet	Not yet
+5W	12	Chan Tai Man	A	Not yet	Not yet
+
