@@ -109,7 +109,7 @@ class MainView : View("Organizer") {
                     field("Check In") {
                         val checkInField = textfield(studentModel.checkIn)
                         button("Now") {
-                            this.minWidth = 45.0
+                            this.minWidth = 50.0
                             setOnAction {
                                 checkInField.text = getNow()
                             }
@@ -118,7 +118,7 @@ class MainView : View("Organizer") {
                     field("Check Out") {
                         val checkOutField = textfield(studentModel.checkOut)
                         button("Now") {
-                            this.minWidth = 45.0
+                            this.minWidth = 50.0
                             setOnAction {
                                 checkOutField.text = getNow()
                             }
@@ -126,12 +126,14 @@ class MainView : View("Organizer") {
                     }
                     field {
                         button("Save") {
+                            prefWidth = 70.0
                             disableProperty().bind(studentModel.dirtyStateProperty().not())
                             setOnAction {
                                 commitStudentModel()
                             }
                         }
                         button("Revert") {
+                            prefWidth = 70.0
                             setOnAction {
                                 studentModel.rollback()
                             }
@@ -227,17 +229,20 @@ class MainView : View("Organizer") {
     fun onAction() {
         studentTable.selectedItem?.apply {
             val formattedTime = getNow()
+            var message: String = ""
             when (mode) {
                 Mode.CHECK_IN -> {
                     checkIn = formattedTime
+                    message = "Checked in!"
                 }
                 Mode.CHECK_OUT -> {
                     checkOut = formattedTime
+                    message = "Checked out!"
                 }
             }
             studentModel.rollback()
             Notifications.create()
-                    .title("Checked in!")
+                    .title(message)
                     .text("$from ($number) $name")
                     .position(Pos.BOTTOM_RIGHT)
                     .hideAfter(Duration.seconds(5.0))
