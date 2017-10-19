@@ -9,3 +9,4 @@ data.txt
 icon.png
 target/
 src/main/kotlin/META-INF
+.DS_Store
