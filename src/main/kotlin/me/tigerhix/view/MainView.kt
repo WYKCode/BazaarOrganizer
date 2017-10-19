@@ -109,7 +109,7 @@ class MainView : View("Organizer") {
                     field("Check In") {
                         val checkInField = textfield(studentModel.checkIn)
                         button("Now") {
-                            this.minWidth = 50.0
+                            this.minWidth = 55.0
                             setOnAction {
                                 checkInField.text = getNow()
                             }
@@ -118,7 +118,7 @@ class MainView : View("Organizer") {
                     field("Check Out") {
                         val checkOutField = textfield(studentModel.checkOut)
                         button("Now") {
-                            this.minWidth = 50.0
+                            this.minWidth = 55.0
                             setOnAction {
                                 checkOutField.text = getNow()
                             }
@@ -153,7 +153,7 @@ class MainView : View("Organizer") {
                 studentModel.rebindOnChange(this) { selectedStudent ->
                     student = selectedStudent ?: studentPlaceholder
                 }
-            }.apply { minWidth = 480.0; prefWidth = 480.0; maxWidth = 480.0 }
+            }.apply { minWidth = 510.0; prefWidth = 510.0; maxWidth = 510.0 }
         }
         Platform.runLater { queryTextField.requestFocus() }
         if (DATA_FILE.exists()) {
